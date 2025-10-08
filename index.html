@@ -1,11 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Victor Gaona</title>
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./index.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/0290978bda.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "Ycfls0qmoFdFvPNhw",
+        });
+      })();
+    </script>
+  </head>
+  <body>
+    <section id="landing-page" onmousemove="moveBackground(event)">
+      <nav>
+        <div class="logo-container">
+          <p class="logo">VG</p>
+        </div>
+        <ul class="nav__link--list">
+          <li class="nav__link" onclick="toggleModal()">
+            <a
+              href="#"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              >About
+            </a>
+          </li>
+          <li class="nav__link">
+            <a
+              href="#projects"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              >Projects
+            </a>
+          </li>
+          <li class="nav__link" onclick="toggleModal()">
+            <a
+              href="#"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              >Contact
+            </a>
+          </li>
+          <li class="nav__link click" onclick="toggleContrast()">
+            <div
+              href=""
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              ><i class="fa-solid fa-circle-half-stroke"></i>
+          </div>
+          </li>
+        </ul>
+      </nav>
+      <header>
+        <div class="header__content">
+          <h1 class="title">Hey</h1>
+          <h1 class="title burgundy">I'm Victor</h1>
+          <p class="header__para">
+            I am a passionate
+            <b class="burgundy">Frontend Software Engineer</b> focused on
+            creating responsive, user-friendly web applications.
+            <br />
+            Here's a bit more <b class="burgundy click" onclick="toggleModal()">about me.</b>
+          </p>
+          <div class="social__list">
+            <a
+              href="https://www.linkedin.com/in/victor-gaona-668399255/"
+              class="social__link click"
+              target="_blank"
+            >
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a
+              href="https://github.com/VictorG22"
+              class="social__link click"
+              target="_blank"
+            >
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a
+              href="./assets/RESUME 2025.pdf"
+              class="social__link click"
+              target="_blank"
+            >
+              <i class="fa-solid fa-file-pdf"></i>
+            </a>
+          </div>
+        </div>
+      </header>
+      <a href="#">
+        <button class="mail__btn click" onclick="toggleModal()">
+          <i class="fa-solid fa-envelope"></i>
+        </button>
+      </a>
+      <a href="#projects" class="scroll">
+        <div class="scroll__icon click"></div>
+      </a>
+      <div class="modal">
+        <div class="modal__half modal__about">
+          <h3 class="modal__title">Here's a bit more about me.</h3>
+          <h4 class="modal__sub-title modal__sub-title--about">
+            Frontend Software Engineer
+          </h4>
+          <p class="modal__para">
+            Aspiring 24 year-old
+            <b class="burgundy">front end developer</b>
+            with
+            <b class="burgundy">hands-on experience</b>
+            tackling challenging and complex projects. Currently developing and
+            designing projects that turn concepts into
+            <b class="burgundy">user-friendly</b>
+            and functional webpages.
+            <b class="burgundy">Passionate</b>
+            about learning, growing, and applying technical skills to create a
+            meaningful impact in
+            <b class="burgundy">real-world projects.</b>
+          </p>
+          <div class="modal__languages">
+            <figure class="modal__language">
+              <img
+                class="modal__language--img"
+                src="./assets/HTML.png"
+                alt=""
+              />
+              <span class="language__name">HTML</span>
+            </figure>
+            <figure class="modal__language">
+              <img class="modal__language--img" src="./assets/CSS.png" alt="" />
+              <span class="language__name">CSS</span>
+            </figure>
+            <figure class="modal__language">
+              <img class="modal__language--img" src="./assets/JS.png" alt="" />
+              <span class="language__name">JavaScript</span>
+            </figure>
+            <figure class="modal__language">
+              <img
+                class="modal__language--img"
+                src="./assets/REACT.png"
+                alt=""
+              />
+              <span class="language__name">React</span>
+            </figure>
+            <figure class="modal__language">
+              <img class="modal__language--img" src="./assets/TS.png" alt="" />
+              <span class="language__name">TypeScript</span>
+            </figure>
+          </div>
+        </div>
+        <div class="modal__half modal__contact">
+        <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+          <h3 class="modal__title modal__title--contact">Let's Have a Chat!</h3>
+          <h4 class="modal__sub-title modal__sub-title--contact">
+            I'm currently open to new opportunites.
+          </h4>
+          <form onsubmit="contact(event)" id="contact__form">
+            <div class="form__item">
+              <label class="form__item--label">Name</label>
+              <input class="input" name="user_name" type="text" />
+            </div>
+            <div class="form__item">
+              <label class="form__item--label">Email</label>
+              <input class="input" name="user_email" type="email" />
+            </div>
+            <div class="form__item">
+              <label class="form__item--label">Message</label>
+              <textarea
+                class="input"
+                name="message"
+                type="text"
+                required
+              ></textarea>
+            </div>
+            <button id="contact__submit" class="form__submit">
+              Send it my Way
+            </button>
+          </form>
+          <div class="modal__overlay modal__overlay--loading">
+            <i class="fa-solid fa-spinner"></i>
+          </div>
+          <div class="modal__overlay modal__overlay--success">
+            Thanks for the message!
+            <br />
+            Looking forward to speaking with you soon.
+          </div>
+        </div>
+      </div>
+      <img src="./assets/semi circle.svg" alt="" class="shape shape--0">
+      <img src="./assets/circle.svg" alt="" class="shape shape--1">
+      <img src="./assets/squiggly.svg" alt="" class="shape shape--2">
+      <img src="./assets/circle.svg" alt="" class="shape shape--3">
+      <img src="./assets/triangle.svg" alt="" class="shape shape--4">
+      <img src="./assets/circle.svg" alt="" class="shape shape--5">
+      <img src="./assets/squiggly.svg" alt="" class="shape shape--6">
+      <img src="./assets/circle.svg" alt="" class="shape shape--7">
+      <img src="./assets/semi circle.svg" alt="" class="shape shape--8">
+    </section>
+    <section id="projects">
+      <div class="container">
+        <div class="row">
+          <h1 class="section__title">
+            Here are some of my <span class="burgundy">projects.</span>
+          </h1>
+          <ul class="project__list">
+            <li class="project">
+              <div class="project__wrapper">
+                <img
+                  src="./assets/blinker mockup.png"
+                  class="project__img"
+                  alt=""
+                />
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">Car Sales Project</h3>
+                  <h4 class="project__description--sub-title">
+                    HTML, CSS, JavaScript
+                  </h4>
+                  <p class="project__description--para">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Explicabo necessitatibus atque numquam ratione consectetur
+                    neque, impedit inventore magnam nobis laborum maiores
+                    similique vitae est temporibus eligendi quam perspiciatis
+                    natus dolore.
+                  </p>
+                  <div class="project__description--links">
+                    <a class="project__description--link">
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a class="project__description--link">
+                      <i class="fa-solid fa-link"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="row footer__row">
+          <div class="logo-container logo__alt">
+            <div class="logo logo-white">VG</div>
+          </div>
+          <div class="footer__social--list">
+            <a
+              href="#"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+            >
+              GitHub</a
+            >
+            <a
+              href="#"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+            >
+              LinkedIn</a
+            >
+            <a
+              href="#" onclick="toggleModal()"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+            >
+              Contact</a
+            >
+            <a
+              href="#"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+            >
+              Resume</a
+            >
+          </div>
+          <div class="footer__copyright">
+            Copyright &copy; 2025 Victor Gaona
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
